@@ -14,6 +14,8 @@ class AdaptadorCarrito(val data:List<ItemListPojo>):RecyclerView.Adapter<Adaptad
                     context,this,false)))
     override fun onBindViewHolder(holder: Holder, position: Int) {
 
+        holder?.bindView(data[position])
+
     }
     override fun getItemCount(): Int =data.size
 
@@ -22,7 +24,7 @@ class AdaptadorCarrito(val data:List<ItemListPojo>):RecyclerView.Adapter<Adaptad
         val txtViewTitle by lazy {
             itemView.find<TextView>(R.id.textTitleItem)
         }
-        val txtViewdesc by lazy {
+        val txtViewDesc by lazy {
             itemView.find<TextView>(R.id.textDescItem)
         }
         val txtViewPrice by lazy {
@@ -30,12 +32,11 @@ class AdaptadorCarrito(val data:List<ItemListPojo>):RecyclerView.Adapter<Adaptad
         }
 
         fun bindView(item: ItemListPojo){
-
+            with(item){
+                txtViewTitle.text=titulo
+                txtViewDesc.text=desc
+                txtViewPrice.text=price
+            }
         }
-
-
-
-
     }
-
 }

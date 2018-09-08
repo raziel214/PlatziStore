@@ -15,7 +15,7 @@ class ItemList : AnkoComponent<AdaptadorCarrito> {
                 linearLayout {
                     orientation= LinearLayout.HORIZONTAL
                     lparams(width= matchParent)
-                    imageView(R.mipmap.ic_launcher){
+                    imageView(R.drawable.shoe_placeholder){
                         R.id.imgItem
                         scaleType= ImageView.ScaleType.CENTER_CROP
                     }.lparams(width=dip(0),height = dip(100),weight = 1F)
@@ -42,7 +42,7 @@ class ItemList : AnkoComponent<AdaptadorCarrito> {
                             topMargin=dip(5)
                             gravity=Gravity.END
                         }
-                    }
+                    }.lparams(width=dip(0),height = dip(wrapContent),weight = 2f)
 
                 }
             }

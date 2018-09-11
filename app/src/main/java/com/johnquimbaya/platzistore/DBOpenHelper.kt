@@ -9,6 +9,7 @@ class DBOpenHelper (ctx:Context):ManagedSQLiteOpenHelper(ctx,"PlatziStore",null,
 
     companion object {
         private var instance:DBOpenHelper?=null
+
         fun getInstance(ctx: Context):DBOpenHelper?=if (instance==null){
 
             instance= DBOpenHelper(ctx)

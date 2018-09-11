@@ -17,15 +17,18 @@ class DetailActivity : AppCompatActivity() {
         val db=DBOpenHelper.getInstance(this)
 
         intent?.extras?.let {
-            txtDetailTitle.text=it.getString("title")
-            txtDetailDesc.text=it.getString("desc")
-            txtDetailPrice.text="$ ${String.format("%.2f", it.getDouble("price"))}"
+            val titl=it.getString("title")
+            val decr=it.getString("desc")
+            val price="$ ${String.format("%.2f", it.getDouble("price"))}"
+            txtDetailTitle.text=titl
+            txtDetailDesc.text=decr
+            txtDetailPrice.text=price
 
             btnDetailBuy.setOnClickListener {
                 db?.use {
-                    val namePr = "name" to txtDetailTitle
-                    val descPr = "desc" to txtDetailDesc
-                    val pricePr = "price" to txtDetailPrice
+                    val namePr = "name" to titl
+                    val descPr = "desc" to decr
+                    val pricePr = "price" to price
                     insert("Productos", namePr, descPr, pricePr)
                 }
                 startActivity<ShopCartActivity>()

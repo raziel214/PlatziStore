@@ -7,8 +7,8 @@ import android.widget.LinearLayout
 import org.jetbrains.anko.*
 import org.jetbrains.anko.cardview.v7.cardView
 
-class ItemList : AnkoComponent<AdaptadorCarrito> {
-    override fun createView(ui: AnkoContext<AdaptadorCarrito>): View = with(ui){
+class ItemList : AnkoComponent<AdapterCart> {
+    override fun createView(ui: AnkoContext<AdapterCart>): View = with(ui){
         verticalLayout{
             lparams(width= matchParent, height = wrapContent)
             cardView{

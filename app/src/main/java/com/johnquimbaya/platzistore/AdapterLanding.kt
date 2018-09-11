@@ -10,7 +10,7 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.item_landing.view.*
 
-class AdapterLanding (val data:List<Itemlanding>):RecyclerView.Adapter<AdapterLanding.Holder>() {
+class AdapterLanding (val data:List<ItemLanding>):RecyclerView.Adapter<AdapterLanding.Holder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder =
             Holder(parent?.inflate(R.layout.item_landing))
 
@@ -22,7 +22,7 @@ class AdapterLanding (val data:List<Itemlanding>):RecyclerView.Adapter<AdapterLa
 
     class Holder(itemView: View?):RecyclerView.ViewHolder(itemView){
 
-        fun bindView(itemlanding: Itemlanding){
+        fun bindView(itemlanding: ItemLanding){
 
             with(itemlanding){
                 itemView.txtTitleItem.text=title

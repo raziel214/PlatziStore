@@ -7,7 +7,7 @@ import android.widget.TextView
 import org.jetbrains.anko.AnkoContext
 import org.jetbrains.anko.find
 
-class AdaptadorCarrito(val data:List<ItemListPojo>):RecyclerView.Adapter<AdaptadorCarrito.Holder>(){
+class AdapterCart(val data:List<ItemLanding>):RecyclerView.Adapter<AdapterCart.Holder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): Holder=
             Holder(ItemList().createView(AnkoContext.
                     Companion.create(parent!!.
@@ -29,7 +29,14 @@ class AdaptadorCarrito(val data:List<ItemListPojo>):RecyclerView.Adapter<Adaptad
             itemView.find<TextView>(R.id.textPriceItem)
         }
 
-        fun bindView(item: ItemListPojo){
+        fun bindView(data: ItemLanding){
+
+            with(data){
+                txtViewTitle.text = title
+                txtViewdesc.text = desc
+                txtViewPrice.text = "$ ${kotlin.String.format("%.2f", price)}"
+            }
+
 
         }
 

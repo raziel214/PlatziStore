@@ -32,9 +32,9 @@ class AdapterCart(val data:List<ItemLanding>):RecyclerView.Adapter<AdapterCart.H
         fun bindView(data: ItemLanding){
 
             with(data){
-                txtViewTitle.text = title
-                txtViewdesc.text = desc
-                txtViewPrice.text = "$ ${kotlin.String.format("%.2f", price)}"
+                txtViewTitle.text = name
+                txtViewdesc.text = gender
+                txtViewPrice.text = mass
             }
 
 

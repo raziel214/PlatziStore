@@ -19,7 +19,7 @@ class ShopCartActivity : AppCompatActivity() {
 
         val items = arrayListOf<ItemLanding>()
 
-        (0..2).map { items.add(ItemLanding("Item $it", "Desc $it", it + 100.0,"")) }
+        (0..2).map { items.add(ItemLanding("Item $it", "Desc $it", "" ,"")) }
 
         rcCart.adapter = AdapterCart(items)
     }
@@ -30,7 +30,7 @@ class ShopCartActivity : AppCompatActivity() {
             select("Productos").exec {
                 Log.e("Columnas:", "${this.columnCount}")
                 Log.e("Columnas:", "${this.columnNames.size}")
-                /**(this.columnNames).map {
+                (this.columnNames).map {
                     Log.e("Columna: ", "$it")
                     Log.e("Columna: ", "${this.getColumnIndex(it)}")
                     Log.e("Columna: ", "${this.getColumnName(this.getColumnIndex(it))}")
@@ -40,7 +40,7 @@ class ShopCartActivity : AppCompatActivity() {
                     Log.e("VALUE", this.getString(1) ?: "")
                     Log.e("VALUE", this.getString(2) ?: "")
                     Log.e("VALUE", "${this.getDouble(3)}")
-                } while (this.moveToNext())*/
+                } while (this.moveToNext())
             }
         }
     }
